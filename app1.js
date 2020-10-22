@@ -38,7 +38,9 @@ password.addEventListener('blur', function() {
 
 //step 12 ???part2
 rememberMe.addEventListener('click', function() {
+    if (rememberMe.checked) {
     window.alert('We will remember your username')
+    }
 });
 
 //step 13
