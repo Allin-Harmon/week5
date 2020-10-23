@@ -17,6 +17,7 @@
 	<body>
 		<nav>
 			<span id="user"></span>
+			<button id="logout">Logout</button><!-- hw2 step 2 -->
 			<i class="fas fa-user"></i>
 		</nav>
 
@@ -24,10 +25,14 @@
 			<h1>Login</h1>
 
 			<label id="userLabel" for="username">Username</label>
-			<input id="username" type="text" />
+			<input id="username" type="text" 
+			pattern="^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$" 
+			title="Must be alphanumeric, start with an alphabet and contains no special characters other than underscore or dash." required />
+			<!-- hw 2 step 3 -->
 
 			<label for="password">Password</label>
-			<input id="password" type="password" />
+			<input id="password" type="password" minlength="6" maxlength="10" required  />
+			<!-- hw 2 step 4 -->
 
 			<div id="remember">
 				<input type="checkbox" id="checkbox" />
