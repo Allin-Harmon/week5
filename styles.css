@@ -44,6 +44,14 @@ nav * {
 	margin-right: 1rem;
 }
 
+nav button {
+	background: firebrick;
+	color: #fff;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+}
 form {
 	width: 25%;
 	display: flex;
