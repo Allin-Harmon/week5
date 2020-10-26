@@ -12,11 +12,11 @@ body {
 }
 
 .blue {
-	color: steelblue !important;
+	color: steelblue; /*? I didn't mean to leave !important, this was un-needed */
 }
 
 .blue-border {
-	border-color: steelblue !important;
+	border-color: steelblue; /*? I didn't mean to leave !important, this was un-needed */
 }
 
 .error {
@@ -25,6 +25,14 @@ body {
 
 .label-error {
 	color: red;
+}
+
+.valid {
+	border-color: green; /*? Added for app2.js */
+}
+
+.label-valid {
+	color: green; /*? Added for app2.js */
 }
 
 nav {
