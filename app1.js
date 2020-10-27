@@ -50,7 +50,9 @@ rememberMe.addEventListener('click', function () {
 });
 
 // hw1 step 13
-submitBtn.addEventListener('click', function () {
+submitBtn.addEventListener('click', function (e) {
+	// e.preventDefault(); //? You'll need uncomment this to see the validation function working.
+
 	if (username.value === '' && password.value === '') {
 		//hw1 step 13 a
 		username.classList.add('error');
@@ -63,18 +65,21 @@ submitBtn.addEventListener('click', function () {
 		userLabel.classList.add('label-error');
 		password.classList.remove('error');
 		passLabel.classList.remove('label-error');
+		validate(); //? uncomment this and comment out 64-67 to see validation work
 	} else if (password.value === '') {
 		// hw1 step 13 c
 		username.classList.remove('error');
 		userLabel.classList.remove('label-error');
 		password.classList.add('error');
 		passLabel.classList.add('label-error');
+		validate(); //? uncomment this and comment out 71-74 to see validation work
 	} else {
 		//hw1 step 13 d
 		username.classList.remove('error');
 		userLabel.classList.remove('label-error');
 		password.classList.remove('error');
 		passLabel.classList.remove('label-error');
+		// validate(); //? uncomment this and comment out 78-81 to see validation work
 
 		//hw2 step 5
 		if (rememberMe.checked) {
@@ -90,6 +95,36 @@ submitBtn.addEventListener('click', function () {
 		sessionStorage.setItem('username', username.value);
 	}
 });
+
+//? Validation function, uncomment to see working.
+// function validate() {
+// 	username.classList.remove('error');
+// 	userLabel.classList.remove('label-error');
+// 	password.classList.remove('error');
+// 	passLabel.classList.remove('label-error');
+// 	const pattern = /^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$/;
+// 	let error = '';
+
+// 	debugger;
+// 	if (!pattern.test(username.value)) {
+// 		error += 'Invalid username format\n';
+// 		username.classList.add('error');
+// 		userLabel.classList.add('label-error');
+// 	}
+
+// 	console.log(10 >= password.value.length);
+// 	console.log(password.value.length >= 6);
+
+// 	if (10 < password.value.length || password.value.length < 6) {
+// 		error += 'Password must be between 6 and 10 characters';
+// 		password.classList.add('error');
+// 		passLabel.classList.add('label-error');
+// 	}
+
+// 	if (error !== '') {
+// 		alert(error);
+// 	}
+// }
 
 //hw2 step 6
 window.addEventListener('load', function () {
